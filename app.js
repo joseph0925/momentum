@@ -1,17 +1,15 @@
-const link = document.querySelector("a");
-
-link.addEventListener("click", handleLinkClick);
-
-function handleLinkClick(potato) {
-    potato.preventDefault();
-    console.log(potato);
-}
-
 const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
 
-loginForm.addEventListener("submit", handleSumbit);
+const HIDDEN_CLASSNAME = "hidden";
 
-function handleSumbit(event) {
+loginForm.addEventListener("submit", onLoginSubmit);
+
+function onLoginSubmit(event) {
     event.preventDefault();
-    console.log(event);
+    const username = loginInput.value;
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
 }

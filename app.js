@@ -1,4 +1,17 @@
-const b = [10, 8, 4, 5, 2, 1, 4, 34, 2];
-console.log(b);
-b.sort();
-console.log(b);
+const link = document.querySelector("a");
+
+link.addEventListener("click", handleLinkClick);
+
+function handleLinkClick(potato) {
+    potato.preventDefault();
+    console.log(potato);
+}
+
+const loginForm = document.querySelector("#login-form");
+
+loginForm.addEventListener("submit", handleSumbit);
+
+function handleSumbit(event) {
+    event.preventDefault();
+    console.log(event);
+}
